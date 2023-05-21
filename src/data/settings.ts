@@ -1,5 +1,5 @@
 export const settings = {
-  site: 'https://redouanahdd.github.io',
+  site: 'https://redouanahaddad.github.io',
   name: 'Nadou Servaes',
   title: "Nadou's Portfolio",
   description: 'Site description',
