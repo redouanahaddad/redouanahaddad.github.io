@@ -1,47 +1,51 @@
-# Astro Starter Kit: Minimal
+# Pro File Astro
 
+Pro File is a website template for a portfolio website that is centered around beautiful imagery. Some of the features include:
+
+- A dynamic photo grid on the home page for different sizes of images
+- A contact page with a contact form
+- An about page for the owner/creator
+- Individual pages for each piece of work. (case studies, photo journal entries, blog posts)
+- Fast performance
+- Custom fonts
+- Responsive Design (mobile, tablet, desktop)
+
+## Get Started 
+
+General familiarity with Astro and its conventions is expected with this template but the code should be organized in a way for any web developer familiar with Node-based projects to understand.
+
+### Installation
+
+Open the unzipped files in your favorite code editor and run the following command to install and run it locally.
+
+```sh
+npm i && npm start
 ```
-npm create astro@latest -- --template minimal
-```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+### Customizing The Theme
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Customize the global site settings such as the title and description in the `src/data/settings.ts` file. You can also disable the Little Sticks plug from there by setting `showLittleSticksPlug` to `false`.
 
-## 🚀 Project Structure
+### Adding Your Own Content
 
-Inside of your Astro project, you'll see the following folders and files:
+Write your own works in markdown and the template will update automatically. You can add your own images to the `public/assets/images/work` folder.
 
-```
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Deploy
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/littlesticks/simple-blog-astro)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Feel free to deploy and host your site on your favorite static hosting service such as Netlify, Firebase Hosting, Vercel, GitHub Pages, etc.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Astro has [an in-depth guide](https://docs.astro.build/en/guides/deploy/) on how to deploy an Astro project to each service.
 
-## 🧞 Commands
+## Support
 
-All commands are run from the root of the project, from a terminal:
+Please feel free to reach out to us on our Discord if you have questions or file an issue on the repo.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+[Join our Discord](https://littlesticks.dev/discord)
 
-## 👀 Want to learn more?
+## License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+If you accessed this code without purchasing it, please purchase it from [Little Sticks](https://littlesticks.dev/templates/pro-file)
+
+Please view the LICENSE file for more information.
