@@ -1,6 +1,6 @@
-import { defineConfig } from 'astro/config';
-import { settings } from './src/data/settings';
-import sitemap from '@astrojs/sitemap';
+import { defineConfig } from "astro/config";
+import { settings } from "./src/data/settings";
+import sitemap from "@astrojs/sitemap";
 
 import mdx from "@astrojs/mdx";
 
@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [sitemap(), mdx()],
   vite: {
     ssr: {
-      external: ['svgo']
-    }
-  }
+      external: ["svgo"],
+    },
+  },
 });
