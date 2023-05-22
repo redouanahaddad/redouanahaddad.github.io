@@ -1,7 +1,8 @@
 ---
 layout: "../../layouts/Work.astro"
 title: "Slanted Lines"
-image: "/assets/images/work/syuhei-inoue-unsplash.jpg"
+images: [{src: "/assets/images/work/syuhei-inoue-unsplash.jpg"},{src: "/assets/images/work/alesia-kazantceva-unsplash.jpg"}]
+
 category: "Shadows"
 ---
 

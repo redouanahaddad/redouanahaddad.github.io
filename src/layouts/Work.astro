@@ -3,51 +3,90 @@ import Layout from "./Page.astro";
 import Container from "../components/Container.astro";
 import { slugify } from "../utils/helpers";
 
-const { frontmatter } = Astro.props;
+const { frontmatter, currentIndex } = Astro.props;
 ---
-
 <style>
-  .work-content__hero {
-    padding: var(--space-m) 0 0 0;
+  /* Your existing styles here */
+  .carousel {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-m);
+    position: relative;
   }
-  .work-content__hero h1 {
-    margin: var(--space-xs) 0 0 0;
+
+  .carousel__item {
+    flex: 0 0 auto;
+    width: 100%;
+    scroll-snap-align: start;
   }
-  .work-content__hero img {
+
+  .carousel__item img {
+    width: 100%;
     border-radius: var(--theme-img-border-radius);
   }
-  .work-content__category {
-    width: fit-content;
-    margin: 0 0 var(--space-xs) 0;
-    font-style: italic;
-    border-radius: 2rem;
+
+  .carousel__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
   }
-  .work-content__category a {
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
+
+  .carousel__arrow:hover {
+    opacity: 1;
   }
-  .work-content__category a:hover {
-    opacity: 0.8;
-    text-decoration: underline;
+
+  .carousel__arrow--prev {
+    left: 1rem;
+  }
+
+  .carousel__arrow--next {
+    right: 1rem;
+  }
+
+  .carousel__arrow-content {
+    width: 2rem;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .carousel__arrow:hover .carousel__arrow-content {
+    opacity: 1;
   }
 </style>
+
+<script src="./carousel.js"></script>
 
 <Layout seo={frontmatter} backToHome>
   <Container narrow bottomPadding>
     <article class="work-content__article">
       <div class="work-content__hero">
-        {
-          frontmatter.image && (
-            <img
-              loading="eager"
-              src={frontmatter.image}
-              alt={frontmatter.alt}
-            />
-          )
-        }
+        <div class="carousel">
+          <div class="carousel__arrow carousel__arrow--prev" >
+            <div class="carousel__arrow-content">&lt;</div>
+          </div>
+          {frontmatter.images.map((image, index) => (
+            <div class="carousel__item">
+              <img loading="eager" src={image.src} alt={image.alt} />
+            </div>
+          ))}
+          <div class="carousel__arrow carousel__arrow--next" >
+            <div class="carousel__arrow-content">&gt;</div>
+          </div>
+        </div>
         {frontmatter.title && <h1>{frontmatter.title}</h1>}
         {
           frontmatter.category && (
@@ -65,3 +104,6 @@ const { frontmatter } = Astro.props;
     </article>
   </Container>
 </Layout>
+
+
+
