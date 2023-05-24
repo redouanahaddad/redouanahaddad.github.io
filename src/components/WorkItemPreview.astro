@@ -38,7 +38,7 @@ const { item, hideCategory } = Astro.props;
 
 <div class="work-item__container">
   <a href={item.url}>
-    <img class="work-item__img" src={item.frontmatter.image} alt="" />
+    <img class="work-item__img" src={item.frontmatter.previewImg} alt="" />
     <h2 class="work-item__title">{item.frontmatter.title}</h2>
     {
       item.frontmatter.category && !hideCategory && (

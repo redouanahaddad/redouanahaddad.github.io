@@ -1,7 +1,6 @@
 ---
 import Layout from "./Page.astro";
 import Container from "../components/Container.astro";
-import { slugify } from "../utils/helpers";
 
 const { frontmatter, currentIndex } = Astro.props;
 ---
@@ -21,6 +20,8 @@ const { frontmatter, currentIndex } = Astro.props;
     flex: 0 0 auto;
     width: 100%;
     scroll-snap-align: start;
+    max-height:30rem
+
   }
 
   .carousel__item img {
@@ -66,44 +67,136 @@ const { frontmatter, currentIndex } = Astro.props;
   .carousel__arrow:hover .carousel__arrow-content {
     opacity: 1;
   }
+  .flow{
+    text-align: justify;
+  }
+  
+ 
+</style>
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+  }
+  .modal__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 2rem;
+  }
+
+  .modal__image-container {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+ 
+  .modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 9999;
+  }
 </style>
 
-<script src="./carousel.js"></script>
 
+
+<script src="./carousel.js"></script>
 <Layout seo={frontmatter} backToHome>
   <Container narrow bottomPadding>
+    <!-- ...existing code... -->
     <article class="work-content__article">
       <div class="work-content__hero">
         <div class="carousel">
-          <div class="carousel__arrow carousel__arrow--prev" >
+          <div class="carousel__arrow carousel__arrow--prev">
             <div class="carousel__arrow-content">&lt;</div>
           </div>
           {frontmatter.images.map((image, index) => (
             <div class="carousel__item">
-              <img loading="eager" src={image.src} alt='alt' />
+              <img
+                loading="eager"
+                src={image.toString()}
+                alt={image}
+                title={image.split('/').slice(-1)}
+                id={`image-${index}`}
+              />
             </div>
           ))}
-          <div class="carousel__arrow carousel__arrow--next" >
+          <div class="carousel__arrow carousel__arrow--next">
             <div class="carousel__arrow-content">&gt;</div>
           </div>
         </div>
         {frontmatter.title && <h1>{frontmatter.title}</h1>}
-        {
-          frontmatter.category && (
-            <p class="work-content__category">
-              <a href={`/category/${slugify(frontmatter.category)}`}>
-                {frontmatter.category}
-              </a>
-            </p>
-          )
-        }
       </div>
       <div class="flow">
         <slot />
       </div>
     </article>
+    <div id="modal" class="modal">
+      <div class="modal__content">
+        <div class="modal__image-container">
+          <img id="modalImage" class="modal__image" src="" alt="Modal Image" />
+        </div>
+        <span id="modalClose" class="modal__close">&times;</span>
+      </div>
+    </div>
   </Container>
 </Layout>
+
+<script>
+  function openModal(element) {
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+
+    modal.style.display = 'flex';
+    modalImage.src = element.src;
+
+    modalClose.addEventListener('click', closeModal);
+
+    function closeModal() {
+      modal.style.display = 'none';
+      modalImage.src = '';
+      modalClose.removeEventListener('click', closeModal);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.carousel__item img');
+    images.forEach((image, index) => {
+      image.addEventListener('click', function () {
+        openModal(this);
+      });
+    });
+  });
+</script>
+
 
 
 

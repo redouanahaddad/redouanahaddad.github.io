@@ -5,35 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
   let startX;
   let scrollLeft;
 
-  // Define the interval in milliseconds (e.g., 3000ms for 3 seconds)
-  const interval = 3000;
-  let timer;
-
-  function startTimer() {
-    timer = setInterval(() => {
-      carousel.scrollLeft += carousel.offsetWidth;
-    }, interval);
-  }
-
-  function stopTimer() {
-    clearInterval(timer);
-  }
-
   carousel.addEventListener("mousedown", (e) => {
     isScrolling = true;
     startX = e.pageX - carousel.offsetLeft;
     scrollLeft = carousel.scrollLeft;
-    stopTimer();
   });
 
   carousel.addEventListener("mouseleave", () => {
     isScrolling = false;
-    startTimer();
   });
 
   carousel.addEventListener("mouseup", () => {
     isScrolling = false;
-    startTimer();
   });
 
   carousel.addEventListener("mousemove", (e) => {
@@ -44,14 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
     carousel.scrollLeft = scrollLeft - walk;
   });
 
-  function carouselPrev() {
-    carousel.scrollLeft -= carousel.offsetWidth;
-  }
+  // Attach click event listeners to images in the carousel
+  items.forEach((item) => {
+    const image = item.querySelector("img");
+    image.addEventListener("click", () => {
+      const imageUrl = image.getAttribute("src");
+      openModal(imageUrl);
+    });
+  });
 
-  function carouselNext() {
-    carousel.scrollLeft += carousel.offsetWidth;
-  }
-
-  // Start the timer initially
-  startTimer();
+  // Attach click event listener to modal close button
+  modalClose.addEventListener("click", closeModal);
 });
