@@ -1,20 +1,20 @@
 ---
 layout: "../../layouts/Work.astro"
-title: "Distinct Shadow"
-images: [{src: "/assets/images/work/syuhei-inoue-unsplash.jpg"},{src: "/assets/images/work/alesia-kazantceva-unsplash.jpg"}]
-category: "Shadows"
-previewImg: "/assets/images/work/foodmarket/1.6 PERS ESCALIERS.jpg"
+title: "Transformation d’un auditoire"
+images: ["/assets/images/work/auditoire/2.1 PLAN 1:50.png",
+"/assets/images/work/auditoire/2.2 JURY A2-COUPES.png",
+"/assets/images/work/auditoire/2.3 JURY A2-DETAILS.png",
+"/assets/images/work/auditoire/2.4 JURY - Décompo.jpg",
+"/assets/images/work/auditoire/2.5 JURY A2 - Axono.jpg",
+"/assets/images/work/auditoire/2.6 JURY - Rendu.jpg"]
+previewImg: "/assets/images/work/auditoire/2.6 JURY - Rendu.jpg"
 
 ---
+&nbsp;
 
-**Quoi** ?
+Dans le cadre de notre cours de design mobilier, l’exercice consistait à ré-imaginer un ancien auditoire de l’Académie des Beaux-Arts. L’objectif était de designer de nouveaux sièges et tablettes, choisir les matériaux et couleurs qui s’accorderaient à ce nouvel espace. Au delà d’un choix 
+esthétique, une attention particulière sur l’acoustique nous étaient 
+demandé
 
-Concevoir un foodmarket dans un ancien parking dans le quartier de Saint-Boniface à Ixelles. 
-
-Le bâtiment a la particularité de posséder deux entrées opposées, l’une donnant sur le quartier Saint-boniface, l’autre vers le quartier de 
-Matongé. Les deux premiers niveaux sont destinés au foodmarket, le 
-troisième accueille un co-meeting. Le programme repose sur la création de stand, d’espace de restauration, d’une circulation verticale fluide et d’espaces suffisamment éclairés.
-
-COMMENT ?
-
-L’objectif principal de mon projet est de réunir Saint-Boniface et Matongé afin d’atténuer les effets de la gentrification. Cela se traduit spatialement par la combinaison de deux ambiances : d’une part un style plutôt sobre qui révèle la brutalité des matériaux, de l’autre, des couleurs vives et des motifs caractéristiques du quartier congolais. Chaque stand est rendu unique grâce à la participation d’artistes peintres d’origines africaines, qui ont réalisés de nombreuses fresques dans le quartier. Un escalier prend position dans une grande percée permettant de distribuer les étages et d’apporter de la lumière jusqu’aux niveaux inférieurs.
+En dessinant mes sièges d’auditoires, j’avais pour volonté de créer un mobilier en apparence simple. Un grand panneau en bois de hêtre, cintré, sur lequel repose des sièges qui se replient sur eux même. En m’inspirant d’une technique existante, l’assise telle une colonne vertébrale, se déroule en un seul geste. Concernant l’acoustique, des disques en mousse 
+intégrant l’éclairage, tapissent toute la surface du plafond.

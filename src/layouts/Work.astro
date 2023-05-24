@@ -9,6 +9,7 @@ const { frontmatter, currentIndex } = Astro.props;
   .carousel {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -169,6 +170,7 @@ const { frontmatter, currentIndex } = Astro.props;
   </Container>
 </Layout>
 
+<!-- Modify the JavaScript code as follows -->
 <script>
   function openModal(element) {
     const modal = document.getElementById('modal');
@@ -179,11 +181,19 @@ const { frontmatter, currentIndex } = Astro.props;
     modalImage.src = element.src;
 
     modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', outsideClick);
 
     function closeModal() {
       modal.style.display = 'none';
       modalImage.src = '';
       modalClose.removeEventListener('click', closeModal);
+      modal.removeEventListener('click', outsideClick);
+    }
+
+    function outsideClick(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
     }
   }
 
@@ -194,6 +204,15 @@ const { frontmatter, currentIndex } = Astro.props;
         openModal(this);
       });
     });
+
+    const modal = document.getElementById('modal');
+    modal.addEventListener('click', outsideClick);
+
+    function outsideClick(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
   });
 </script>
 
