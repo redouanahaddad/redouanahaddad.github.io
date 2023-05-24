@@ -5,7 +5,7 @@ import WorkItemPreview from '../../components/WorkItemPreview.astro';
 import {generateCategoryData} from '../../utils/helpers.js'
 
 export async function getStaticPaths() {
-  const allWorks = await Astro.glob('../work/*.{mdx,md}');
+  const allWorks = await Astro.glob('../projets/*.{mdx,md}');
   const sortedWorks = allWorks.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
   const allCategoriesUnique = new Set();
 
