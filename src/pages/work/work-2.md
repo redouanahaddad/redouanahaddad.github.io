@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/Work.astro"
 title: "Distinct Shadow"
-image: '/assets/images/work/augustine-wong-unsplash.jpg'
+images: [{src: "/assets/images/work/syuhei-inoue-unsplash.jpg"},{src: "/assets/images/work/alesia-kazantceva-unsplash.jpg"}]
 category: "Shadows"
 ---
 

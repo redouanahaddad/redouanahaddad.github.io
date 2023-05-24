@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/Work.astro"
 title: "Almost Another Planet"
-image: '/assets/images/work/ferran-feixas-unsplash.jpg'
+images: [{src: "/assets/images/work/syuhei-inoue-unsplash.jpg"},{src: "/assets/images/work/alesia-kazantceva-unsplash.jpg"}]
 category: "Daylight"
 ---
 

@@ -80,7 +80,7 @@ const { frontmatter, currentIndex } = Astro.props;
           </div>
           {frontmatter.images.map((image, index) => (
             <div class="carousel__item">
-              <img loading="eager" src={image.src} alt={image.alt} />
+              <img loading="eager" src={image.src} alt='alt' />
             </div>
           ))}
           <div class="carousel__arrow carousel__arrow--next" >
