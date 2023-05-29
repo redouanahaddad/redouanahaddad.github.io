@@ -1,6 +1,7 @@
 ---
 import Layout from "./Page.astro";
 import Container from "../components/Container.astro";
+import arrow from '../../assets/arrow-right.svg'
 
 const { frontmatter, currentIndex } = Astro.props;
 ---
@@ -196,10 +197,10 @@ const { frontmatter, currentIndex } = Astro.props;
         <span id="modalClose" class="modal__close">Fermer</span>
         <div class="modal__image-container">
           <div class="modal__arrow modal__arrow--prev" id="modalPrevArrow">
-            <img class="modal__arrow-content astro-IDH7QTAX" src="../../assets/arrow-right.svg" alt="" style="transform: rotate(180deg);">          </div>
+            <img class="modal__arrow-content astro-IDH7QTAX" src={arrow} alt="" style="transform: rotate(180deg);">          </div>
           <img id="modalImage" class="modal__image" src="" alt="Modal Image" />
           <div class="modal__arrow modal__arrow--next" id="modalNextArrow">
-              <img class="modal__arrow-content"src="../../assets/arrow-right.svg" alt=""></div>
+              <img class="modal__arrow-content" src={arrow} alt=""></div>
         </div>
       </div>
     </div>
