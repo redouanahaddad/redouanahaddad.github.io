@@ -2,6 +2,8 @@
 import Container from "../components/Container.astro";
 import ProfilePhoto from "../components/ProfilePhoto.astro";
 import Layout from "../layouts/Page.astro";
+import Button from "../components/Button.astro";
+import Download from '../../assets/telecharger.png';
 ---
 
 <Layout>
@@ -58,10 +60,13 @@ import Layout from "../layouts/Page.astro";
       Il est important, selon moi, d'être correctement préparée à ce métier qui
       permettra, je l'espère, de m'ouvrir des portes au delà des frontières.
     </p>
+    <Button href="/contact">Télécharger mon CV</Button>
+
   </Container>
   <style>
     p{
       text-align: justify;
     }
+
   </style>
 </Layout>
