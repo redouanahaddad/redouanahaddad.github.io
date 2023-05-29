@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let isScrolling = false;
   let startX;
   let scrollLeft;
+  let images;
 
   carousel.addEventListener("mousedown", (e) => {
     isScrolling = true;
@@ -38,4 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Attach click event listener to modal close button
   modalClose.addEventListener("click", closeModal);
+  images = carousel.querySelectorAll(".carousel__item img"); // Assign images
+  items.forEach((item) => {
+    const image = item.querySelector("img");
+    image.addEventListener("click", () => {
+      const imageUrl = image.getAttribute("src");
+      openModal(imageUrl);
+    });
+  });
 });

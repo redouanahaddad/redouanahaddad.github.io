@@ -88,6 +88,7 @@ const { frontmatter, currentIndex } = Astro.props;
     align-items: center;
     justify-content: center;
   }
+
   .modal__content {
     position: relative;
     width: 100%;
@@ -124,6 +125,37 @@ const { frontmatter, currentIndex } = Astro.props;
     cursor: pointer;
     z-index: 9999;
   }
+  .modal__arrow {
+    /* Existing styles */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 2rem;
+    color: #fff; /* Add this line to ensure arrow visibility on the blurred background */
+
+  }
+
+  .modal__arrow--prev {
+    left: 2rem;
+  }
+
+  .modal__arrow--next {
+    right: 2rem;
+  }
+
+  .modal__arrow-content {
+    /* Existing styles */
+    width: 2rem;
+    height: 2rem;
+    filter: invert(92%) sepia(34%) saturate(2%) hue-rotate(249deg) brightness(110%) contrast(101%);  }
+
+  .modal__arrow:hover .modal__arrow-content {
+    opacity: 1;
+  }
+
 </style>
 
 
@@ -161,10 +193,14 @@ const { frontmatter, currentIndex } = Astro.props;
     </article>
     <div id="modal" class="modal">
       <div class="modal__content">
+        <span id="modalClose" class="modal__close">Fermer</span>
         <div class="modal__image-container">
+          <div class="modal__arrow modal__arrow--prev" id="modalPrevArrow">
+            <img class="modal__arrow-content astro-IDH7QTAX" src="../../assets/arrow-right.svg" alt="" style="transform: rotate(180deg);">          </div>
           <img id="modalImage" class="modal__image" src="" alt="Modal Image" />
+          <div class="modal__arrow modal__arrow--next" id="modalNextArrow">
+              <img class="modal__arrow-content"src="../../assets/arrow-right.svg" alt=""></div>
         </div>
-        <span id="modalClose" class="modal__close">&times;</span>
       </div>
     </div>
   </Container>
@@ -176,24 +212,52 @@ const { frontmatter, currentIndex } = Astro.props;
     const modal = document.getElementById('modal');
     const modalImage = document.getElementById('modalImage');
     const modalClose = document.getElementById('modalClose');
+    const modalPrevArrow = document.getElementById('modalPrevArrow');
+    const modalNextArrow = document.getElementById('modalNextArrow');
+    const images = document.querySelectorAll('.carousel__item img');
+
 
     modal.style.display = 'flex';
     modalImage.src = element.src;
 
     modalClose.addEventListener('click', closeModal);
     modal.addEventListener('click', outsideClick);
+    modalPrevArrow.addEventListener('click', showPreviousImage);
+    modalNextArrow.addEventListener('click', showNextImage);
+    document.addEventListener('keydown', handleKeyDown);
+
+    function handleKeyDown(event) {
+      if (event.key === 'ArrowLeft') {
+        showPreviousImage();
+      } else if (event.key === 'ArrowRight') {
+        showNextImage();
+      }
+    }
 
     function closeModal() {
       modal.style.display = 'none';
       modalImage.src = '';
       modalClose.removeEventListener('click', closeModal);
       modal.removeEventListener('click', outsideClick);
+      document.removeEventListener('keydown', handleKeyDown);
+
     }
 
     function outsideClick(event) {
       if (event.target === modal) {
         closeModal();
       }
+    }
+    function showPreviousImage() {
+      const currentIndex = Array.from(images).findIndex((img) => img.src === modalImage.src);
+      const previousIndex = (currentIndex - 1 + images.length) % images.length;
+      modalImage.src = images[previousIndex].src;
+    }
+
+    function showNextImage() {
+      const currentIndex = Array.from(images).findIndex((img) => img.src === modalImage.src);
+      const nextIndex = (currentIndex + 1) % images.length;
+      modalImage.src = images[nextIndex].src;
     }
   }
 
