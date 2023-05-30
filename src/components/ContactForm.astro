@@ -14,9 +14,15 @@ import Button from './Button.astro';
 </style>
 
 <!-- This form is ready to be used with Netlify forms, formspark, formspress, getform.io, etc -->
-<form action="">
+<form
+  netlify
+  action=""
+  name="contact"
+  method="POST"
+  action="/succes"
+>
   <FormInput label="Nom" name="name" autocomplete="name" />
   <FormInput label="Email" name="email" autocomplete="email" />
   <FormTextarea label="Message" name="message" />
-  <Button>Envoyer</Button>
+  <Button type="submit">Envoyer</Button>
 </form>
