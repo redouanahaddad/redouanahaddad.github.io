@@ -76,7 +76,30 @@ const { frontmatter, currentIndex } = Astro.props;
     text-align: justify;
   }
   
- 
+  .carousel__image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.carousel__instruction {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel__image-container:hover .carousel__instruction {
+  opacity: 1;
+}
+
+
 </style>
 <style>
   .modal {
@@ -176,13 +199,16 @@ const { frontmatter, currentIndex } = Astro.props;
           </div>
           {frontmatter.images.map((image, index) => (
             <div class="carousel__item">
-              <img
-                loading="eager"
-                src={image.toString()}
-                alt={image}
-                title='xxx'
-                id={`image-${index}`}
-              />
+              <div class="carousel__image-container">
+                <img
+                  loading="eager"
+                  src={image.toString()}
+                  alt={image}
+                  title="xxx"
+                  id={`image-${index}`}
+                />
+                <div class="carousel__instruction">Cliquez pour agrandir l'image</div>
+              </div>
             </div>
           ))}
           <div class="carousel__arrow carousel__arrow--next">
@@ -195,6 +221,7 @@ const { frontmatter, currentIndex } = Astro.props;
         <slot />
       </div>
     </article>
+    
     <div id="modal" class="modal">
       <div class="modal__content">
         <span id="modalClose" class="modal__close">Fermer</span>
