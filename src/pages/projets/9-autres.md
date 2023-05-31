@@ -14,7 +14,7 @@ images: ["/assets/images/work/autres/Photo 17.jpg",
 "/assets/images/work/autres/Planche 2.2.png",
 "/assets/images/work/autres/Planche 3.2.png",
 "/assets/images/work/autres/Salle d'expo 1.png"]
-previewImg: "/assets/images/work/autres/Salle d'expo 1.png"
+previewImg: "/assets/images/work/autres/09.COUV_Autre.jpg"
 ---
 
 Ici une sélection de mes dessins, collages et photos à travers les années

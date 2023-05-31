@@ -7,7 +7,7 @@ images: ["/assets/images/work/ecole/3.1 Plan A2H.jpg",
 "/assets/images/work/ecole/3.4 Vue classe.jpg",
 "/assets/images/work/ecole/3.5 Vue salle sieste.jpg",
 "/assets/images/work/ecole/3.6 IMG_5069.png",]
-previewImg: "/assets/images/work/ecole/3.3 Decompo.png"
+previewImg: "/assets/images/work/ecole/03.COUV_Ecole.jpg"
 
 ---
 

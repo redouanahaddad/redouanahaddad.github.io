@@ -6,7 +6,7 @@ images: ["/assets/images/work/mur/6.0 MUR PLAN 2.png",
 "/assets/images/work/mur/6.2 A1-Projet-2.png",
 "/assets/images/work/mur/6.3 IMG20200225105332.png",
 "/assets/images/work/mur/6.4 IMG20200227172545.png"]
-previewImg: "/assets/images/work/mur/6.1 A2-Projet 2-PHOTOSHOP_.jpg"
+previewImg: "/assets/images/work/mur/06.COUV_Habiter_Le_Mur.jpg"
 ---
 
 Questionnement sur un des mur de notre atelier.

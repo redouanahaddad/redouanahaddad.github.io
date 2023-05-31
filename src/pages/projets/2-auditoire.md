@@ -7,7 +7,7 @@ images: ["/assets/images/work/auditoire/2.1 PLAN 1:50.png",
 "/assets/images/work/auditoire/2.4 JURY - Décompo.jpg",
 "/assets/images/work/auditoire/2.5 JURY A2 - Axono.jpg",
 "/assets/images/work/auditoire/2.6 JURY - Rendu.jpg"]
-previewImg: "/assets/images/work/auditoire/2.6 JURY - Rendu.jpg"
+previewImg: "/assets/images/work/auditoire/02.COUV_Auditoire.jpg"
 
 ---
 

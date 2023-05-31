@@ -8,7 +8,7 @@ images: ["/assets/images/work/coworkaffe/5.0 Façade copie.png",
 "/assets/images/work/coworkaffe/5.4 IMG_0934.png",
 "/assets/images/work/coworkaffe/5.5 Moulure copie.png",
 "/assets/images/work/coworkaffe/5.6 Vitrail copie.png"]
-previewImg: "/assets/images/work/coworkaffe/5.0 Façade copie.png"
+previewImg: "/assets/images/work/coworkaffe/05.COUV_Coworkaffe.jpg"
 
 ---
 

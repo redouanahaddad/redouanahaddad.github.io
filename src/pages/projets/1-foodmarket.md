@@ -12,7 +12,7 @@ images: ["/assets/images/work/foodmarket/1.1 Organigramme.png",
 "/assets/images/work/foodmarket/1.9 STAND-A1-H.png",
 "/assets/images/work/foodmarket/1.10 PERS WC.jpg",
 "/assets/images/work/foodmarket/1.11 DETAIL TOILETTES 2-A1H.png"]
-previewImg: "/assets/images/work/foodmarket/1.6 PERS ESCALIERS.jpg"
+previewImg: "/assets/images/work/foodmarket/01.COUV_Foodmarket.jpg"
 
 ---
 

@@ -7,7 +7,7 @@ images: ["/assets/images/work/riad/4.0 Image sublime 2 copie.png",
 "/assets/images/work/riad/4.3 COUPES PROJET VIDE.png",
 "/assets/images/work/riad/4.4 Cour vu de haut illu PS copie.png",
 "/assets/images/work/riad/4.5 SERVAES_NADOU_ARCM2_PSP copie (glissé(e)s).png"]
-previewImg: "/assets/images/work/riad/4.0 Image sublime 2 copie.png"
+previewImg: "/assets/images/work/riad/04.COUV_Riad.jpg"
 
 ---
 Développer un programme dans un riad à Fès au Maroc tout en tenant compte de la situation culturelle et géographique particulière
