@@ -1,0 +1,36 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Page.astro";
+import MsgReceived from '../../public/assets/images/received-message.png'
+---
+<style>
+  h1, p{
+    text-align: center;
+  }
+  .success-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  img{
+    width: 80px;
+    height: 80px;
+  }
+</style>
+<Layout>
+  <Container bottomPadding topPadding narrow flow>
+    <div class="success-container"><h1>Message bien envoyé</h1>
+
+      <p>
+       Merci d'avoir pris contact via le formulaire. Je vous recontacte dans le plus bref délai. 
+      </p>
+      <img src={MsgReceived} alt="">
+    </div>
+    
+  </Container>
+  <style>
+   
+
+  </style>
+</Layout>
