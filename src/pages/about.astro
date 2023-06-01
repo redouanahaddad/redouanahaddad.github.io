@@ -3,15 +3,20 @@ import Container from "../components/Container.astro";
 import ProfilePhoto from "../components/ProfilePhoto.astro";
 import Layout from "../layouts/Page.astro";
 import Button from "../components/Button.astro";
-import Download from '../../assets/telecharger.png';
-import CV from '../../public/assets/CV_PORTFOLIO.pdf'
+import Download from "../../assets/telecharger.png";
+import CV from "../../public/assets/CV_PORTFOLIO.pdf";
 ---
 
+<style>
+  p {
+    font-weight: 200;
+  }
+</style>
 <Layout>
   <Container bottomPadding topPadding narrow flow>
     <ProfilePhoto />
     <h1>À propos de moi</h1>
-            <Button href={CV} download outlined>Télécharger mon CV</Button>
+    <Button href={CV} download outlined>Télécharger mon CV</Button>
 
     <p>
       Je m'appelle Nadou Servaes, j'ai 25 ans et je suis actuellement étudiante
@@ -63,10 +68,6 @@ import CV from '../../public/assets/CV_PORTFOLIO.pdf'
       Il est important, selon moi, d'être correctement préparée à ce métier qui
       permettra, je l'espère, de m'ouvrir des portes au delà des frontières.
     </p>
-
   </Container>
-  <style>
-   
-
-  </style>
+  <style></style>
 </Layout>

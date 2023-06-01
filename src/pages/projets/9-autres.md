@@ -1,19 +1,19 @@
 ---
 layout: "../../layouts/Work.astro"
 title: 'Autres'
-images: ["/assets/images/work/autres/Photo 17.jpg",
-"/assets/images/work/autres/Capture d’écran 2023-05-22 à 01.47.05.png",
-"/assets/images/work/autres/Capture d’écran 2023-05-22 à 01.47.24.png",
-"/assets/images/work/autres/Capture d’écran 2023-05-22 à 01.47.46.png",
-"/assets/images/work/autres/Capture d’écran 2023-05-22 à 01.49.53.png",
-"/assets/images/work/autres/Flat Design 2.jpg",
-"/assets/images/work/autres/Flat Design 3.jpg",
-"/assets/images/work/autres/Photo 6.jpg",
-"/assets/images/work/autres/Photo 27.jpg",
-"/assets/images/work/autres/Planche 1 couleur.png",
-"/assets/images/work/autres/Planche 2.2.png",
-"/assets/images/work/autres/Planche 3.2.png",
-"/assets/images/work/autres/Salle d'expo 1.png"]
+images: ["/assets/images/work/autres/COLLAGE.jpg",
+"/assets/images/work/autres/DESSIN1.jpg",
+"/assets/images/work/autres/DESSIN2.jpg",
+"/assets/images/work/autres/DESSIN3.jpg",
+"/assets/images/work/autres/DESSIN4.jpg",
+"/assets/images/work/autres/FLAT_DESIGN1.jpg",
+"/assets/images/work/autres/FLAT_DESIGN2.jpg",
+"/assets/images/work/autres/MONOGRAMME1.jpg",
+"/assets/images/work/autres/MONOGRAMME2.jpg",
+"/assets/images/work/autres/MONOGRAMME3.jpg",
+"/assets/images/work/autres/PHOTO1.jpg",
+"/assets/images/work/autres/PHOTO2.jpg",
+"/assets/images/work/autres/PHOTO3.jpg"]
 previewImg: "/assets/images/work/autres/09.COUV_Autre.jpg"
 ---
 

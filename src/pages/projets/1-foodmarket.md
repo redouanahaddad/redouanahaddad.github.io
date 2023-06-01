@@ -1,17 +1,18 @@
 ---
 layout: "../../layouts/Work.astro"
 title: "Foodmarket St-Boniface"
-images: ["/assets/images/work/foodmarket/1.1 Organigramme.png",
-"/assets/images/work/foodmarket/1.2 PLAN 1:100+1:200.png",
-"/assets/images/work/foodmarket/1.3 COUPES 1:100.png",
-"/assets/images/work/foodmarket/1.4 PERS ESTRADE.jpg",
-"/assets/images/work/foodmarket/1.5 DETAIL ESTRADE-A1H.png",
-"/assets/images/work/foodmarket/1.6 PERS ESCALIERS.jpg",
-"/assets/images/work/foodmarket/1.7 DETAIL ESCALIERS1-A1-H - 1:50.png",
-"/assets/images/work/foodmarket/1.8 PERS STAND.jpg",
-"/assets/images/work/foodmarket/1.9 STAND-A1-H.png",
-"/assets/images/work/foodmarket/1.10 PERS WC.jpg",
-"/assets/images/work/foodmarket/1.11 DETAIL TOILETTES 2-A1H.png"]
+images: ["/assets/images/work/foodmarket/1.1.PLANS_GENERALE.jpg",
+"/assets/images/work/foodmarket/1.2.COUPES_GENERALE.jpg",
+"/assets/images/work/foodmarket/1.3.MAQUETTE_FOODMARKET.jpg",
+"/assets/images/work/foodmarket/1.4.ORGANIGRAMME.jpg",
+"/assets/images/work/foodmarket/1.5.DETAIL_ESTRADE.jpg",
+"/assets/images/work/foodmarket/1.6.PERS_ESTRADE.jpg",
+"/assets/images/work/foodmarket/1.7.DETAIL_ESCALIERS.jpg",
+"/assets/images/work/foodmarket/1.8.PERS_ESCALIERS.jpeg",
+"/assets/images/work/foodmarket/1.9.DETAIL_STAND.jpg",
+"/assets/images/work/foodmarket/1.10.PERS_STAND.jpeg",
+"/assets/images/work/foodmarket/1.11.DETAIL_SANITAIRES.jpg",
+"/assets/images/work/foodmarket/1.12.PERS_ SANITAIRES.jpeg"]
 previewImg: "/assets/images/work/foodmarket/01.COUV_Foodmarket.jpg"
 
 ---

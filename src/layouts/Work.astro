@@ -1,18 +1,22 @@
 ---
 import Layout from "./Page.astro";
 import Container from "../components/Container.astro";
-import arrow from '../../assets/arrow-right.svg'
+import arrow from "../../assets/arrow-right.svg";
 
 const { frontmatter, currentIndex } = Astro.props;
 ---
+
 <style>
-  h1{
+  h1 {
     margin-top: 10px;
     margin-bottom: 1rem;
     font-weight: 300;
   }
+  span {
+    font-weight: 300 !important;
+  }
   /* Your existing styles here */
-  .flow{
+  .flow {
     font-weight: 200;
   }
   .carousel {
@@ -30,8 +34,7 @@ const { frontmatter, currentIndex } = Astro.props;
     flex: 0 0 auto;
     width: 100%;
     scroll-snap-align: start;
-    max-height:30rem
-
+    max-height: 30rem;
   }
 
   .carousel__item img {
@@ -77,32 +80,29 @@ const { frontmatter, currentIndex } = Astro.props;
   .carousel__arrow:hover .carousel__arrow-content {
     opacity: 1;
   }
- 
-  
+
   .carousel__image-container {
-  position: relative;
-  display: inline-block;
-}
+    position: relative;
+    display: inline-block;
+  }
 
-.carousel__instruction {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 0.5rem;
-  font-size: 0.8rem;
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
+  .carousel__instruction {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
 
-.carousel__image-container:hover .carousel__instruction {
-  opacity: 1;
-}
-
-
+  .carousel__image-container:hover .carousel__instruction {
+    opacity: 1;
+  }
 </style>
 <style>
   .modal {
@@ -145,7 +145,6 @@ const { frontmatter, currentIndex } = Astro.props;
     object-fit: contain;
   }
 
- 
   .modal__close {
     position: absolute;
     top: 1rem;
@@ -165,7 +164,6 @@ const { frontmatter, currentIndex } = Astro.props;
     transition: opacity 0.3s ease-in-out;
     font-size: 2rem;
     color: #fff; /* Add this line to ensure arrow visibility on the blurred background */
-
   }
 
   .modal__arrow--prev {
@@ -180,15 +178,14 @@ const { frontmatter, currentIndex } = Astro.props;
     /* Existing styles */
     width: 2rem;
     height: 2rem;
-    filter: invert(92%) sepia(34%) saturate(2%) hue-rotate(249deg) brightness(110%) contrast(101%);  }
+    filter: invert(92%) sepia(34%) saturate(2%) hue-rotate(249deg)
+      brightness(110%) contrast(101%);
+  }
 
   .modal__arrow:hover .modal__arrow-content {
     opacity: 1;
   }
-
 </style>
-
-
 
 <script src="./carousel.js"></script>
 <Layout seo={frontmatter} backToHome>
@@ -200,20 +197,24 @@ const { frontmatter, currentIndex } = Astro.props;
           <div class="carousel__arrow carousel__arrow--prev">
             <div class="carousel__arrow-content">&lt;</div>
           </div>
-          {frontmatter.images.map((image, index) => (
-            <div class="carousel__item">
-              <div class="carousel__image-container">
-                <img
-                  loading="eager"
-                  src={image.toString()}
-                  alt={image}
-                  title="xxx"
-                  id={`image-${index}`}
-                />
-                <div class="carousel__instruction">Cliquez pour agrandir l'image</div>
+          {
+            frontmatter.images.map((image, index) => (
+              <div class="carousel__item">
+                <div class="carousel__image-container">
+                  <img
+                    loading="eager"
+                    src={image.toString()}
+                    alt={image}
+                    title="xxx"
+                    id={`image-${index}`}
+                  />
+                  <div class="carousel__instruction">
+                    Cliquez pour agrandir l'image
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
           <div class="carousel__arrow carousel__arrow--next">
             <div class="carousel__arrow-content">&gt;</div>
           </div>
@@ -224,16 +225,23 @@ const { frontmatter, currentIndex } = Astro.props;
         <slot />
       </div>
     </article>
-    
+
     <div id="modal" class="modal">
       <div class="modal__content">
         <span id="modalClose" class="modal__close">Fermer</span>
         <div class="modal__image-container">
           <div class="modal__arrow modal__arrow--prev" id="modalPrevArrow">
-            <img class="modal__arrow-content astro-IDH7QTAX" src={arrow} alt="" style="transform: rotate(180deg);">          </div>
+            <img
+              class="modal__arrow-content astro-IDH7QTAX"
+              src={arrow}
+              alt=""
+              style="transform: rotate(180deg);"
+            />
+          </div>
           <img id="modalImage" class="modal__image" src="" alt="Modal Image" />
           <div class="modal__arrow modal__arrow--next" id="modalNextArrow">
-              <img class="modal__arrow-content" src={arrow} alt=""></div>
+            <img class="modal__arrow-content" src={arrow} alt="" />
+          </div>
         </div>
       </div>
     </div>
@@ -243,38 +251,36 @@ const { frontmatter, currentIndex } = Astro.props;
 <!-- Modify the JavaScript code as follows -->
 <script>
   function openModal(element) {
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modalImage');
-    const modalClose = document.getElementById('modalClose');
-    const modalPrevArrow = document.getElementById('modalPrevArrow');
-    const modalNextArrow = document.getElementById('modalNextArrow');
-    const images = document.querySelectorAll('.carousel__item img');
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modalImage");
+    const modalClose = document.getElementById("modalClose");
+    const modalPrevArrow = document.getElementById("modalPrevArrow");
+    const modalNextArrow = document.getElementById("modalNextArrow");
+    const images = document.querySelectorAll(".carousel__item img");
 
-
-    modal.style.display = 'flex';
+    modal.style.display = "flex";
     modalImage.src = element.src;
 
-    modalClose.addEventListener('click', closeModal);
-    modal.addEventListener('click', outsideClick);
-    modalPrevArrow.addEventListener('click', showPreviousImage);
-    modalNextArrow.addEventListener('click', showNextImage);
-    document.addEventListener('keydown', handleKeyDown);
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", outsideClick);
+    modalPrevArrow.addEventListener("click", showPreviousImage);
+    modalNextArrow.addEventListener("click", showNextImage);
+    document.addEventListener("keydown", handleKeyDown);
 
     function handleKeyDown(event) {
-      if (event.key === 'ArrowLeft') {
+      if (event.key === "ArrowLeft") {
         showPreviousImage();
-      } else if (event.key === 'ArrowRight') {
+      } else if (event.key === "ArrowRight") {
         showNextImage();
       }
     }
 
     function closeModal() {
-      modal.style.display = 'none';
-      modalImage.src = '';
-      modalClose.removeEventListener('click', closeModal);
-      modal.removeEventListener('click', outsideClick);
-      document.removeEventListener('keydown', handleKeyDown);
-
+      modal.style.display = "none";
+      modalImage.src = "";
+      modalClose.removeEventListener("click", closeModal);
+      modal.removeEventListener("click", outsideClick);
+      document.removeEventListener("keydown", handleKeyDown);
     }
 
     function outsideClick(event) {
@@ -283,28 +289,32 @@ const { frontmatter, currentIndex } = Astro.props;
       }
     }
     function showPreviousImage() {
-      const currentIndex = Array.from(images).findIndex((img) => img.src === modalImage.src);
+      const currentIndex = Array.from(images).findIndex(
+        (img) => img.src === modalImage.src
+      );
       const previousIndex = (currentIndex - 1 + images.length) % images.length;
       modalImage.src = images[previousIndex].src;
     }
 
     function showNextImage() {
-      const currentIndex = Array.from(images).findIndex((img) => img.src === modalImage.src);
+      const currentIndex = Array.from(images).findIndex(
+        (img) => img.src === modalImage.src
+      );
       const nextIndex = (currentIndex + 1) % images.length;
       modalImage.src = images[nextIndex].src;
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const images = document.querySelectorAll('.carousel__item img');
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".carousel__item img");
     images.forEach((image, index) => {
-      image.addEventListener('click', function () {
+      image.addEventListener("click", function () {
         openModal(this);
       });
     });
 
-    const modal = document.getElementById('modal');
-    modal.addEventListener('click', outsideClick);
+    const modal = document.getElementById("modal");
+    modal.addEventListener("click", outsideClick);
 
     function outsideClick(event) {
       if (event.target === modal) {
@@ -313,7 +323,3 @@ const { frontmatter, currentIndex } = Astro.props;
     }
   });
 </script>
-
-
-
-

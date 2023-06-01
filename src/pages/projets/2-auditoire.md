@@ -1,12 +1,12 @@
 ---
 layout: "../../layouts/Work.astro"
 title: "Transformation d’un auditoire"
-images: ["/assets/images/work/auditoire/2.1_PLAN_150.png",
-"/assets/images/work/auditoire/2.2_JURY_A2-COUPES.png",
-"/assets/images/work/auditoire/2.3_JURY_A2-DETAILS.png",
-"/assets/images/work/auditoire/2.4_JURY_-_Decompo.jpg",
-"/assets/images/work/auditoire/2.5_JURY_A2_-_Axono.jpg",
-"/assets/images/work/auditoire/2.6_JURY_-_Rendu.jpg"]
+images: ["/assets/images/work/auditoire/2.1.PLANS_AUDITOIRE.jpg",
+"/assets/images/work/auditoire/2.2.COUPES_AUDITOIRE.jpg",
+"/assets/images/work/auditoire/2.3.DETAIL_ASSISE.jpg",
+"/assets/images/work/auditoire/2.4.DECOMPO_ASSISE.jpeg",
+"/assets/images/work/auditoire/2.5.AXONO_ASSISE.jpg",
+"/assets/images/work/auditoire/2.6.RENDU_AUDITOIRE.jpeg"]
 previewImg: "/assets/images/work/auditoire/02.COUV_Auditoire.jpg"
 
 ---
